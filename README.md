@@ -1,5 +1,7 @@
 # MerkleTree
 
+Disclaimer: the cloning could be a bit slower because of the samples/input-100k.txt file.
+
 Implementation of a Merkle tree as a test assignment.
 The tree is assumed binary.
 The input is assumed already hashed, so there was no need to rehash the first level.
