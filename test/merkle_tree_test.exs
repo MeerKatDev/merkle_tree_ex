@@ -9,6 +9,7 @@ defmodule MerkleTreeTest do
     assert ^hash = MerkleTree.get_root(transactions)
     assert ^hash = MerkleTree.Reduce.get_root(transactions)
     assert ^hash = MerkleTree.ReduceNoInversion.get_root(transactions)
+    assert ^hash = MerkleTree.ReduceMultiple.get_root(transactions)
   end
 
   test "small - 20 hashes" do
@@ -18,6 +19,7 @@ defmodule MerkleTreeTest do
     assert ^hash = MerkleTree.get_root(transactions)
     assert ^hash = MerkleTree.Reduce.get_root(transactions)
     assert ^hash = MerkleTree.ReduceNoInversion.get_root(transactions)
+    assert ^hash = MerkleTree.ReduceMultiple.get_root(transactions)
   end
 
   test "all given hashes" do
