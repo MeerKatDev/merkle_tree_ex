@@ -1,6 +1,6 @@
 # MerkleTree
 
-Disclaimer: the cloning could be a bit slower because of the samples/input-100k.txt file.
+Disclaimer: the samples/input-100k.txt file is not included, since it was too big. I placed it in [my drive](https://drive.google.com/file/d/1CEy-IKB7uImNF-A1TbKEwF9Vm40NZRNo/view?usp=sharing)
 
 Implementation of a Merkle tree as a test assignment.
 The tree is assumed binary.

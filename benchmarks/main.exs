@@ -9,7 +9,7 @@ Benchee.run(
   warmup: 5,
   inputs: %{
     "Small" => ["a", "b", "c", "d"],
-    "Medium" => File.read!("samples/input.txt") |> String.split("\n"),
-    "Bigger" => File.read!("samples/input-100k.txt") |> String.split("\n")
+    "Medium" => File.read!("samples/input.txt") |> String.split("\n")
+    # ,"Bigger" => File.read!("samples/input-100k.txt") |> String.split("\n")
   }
 )
