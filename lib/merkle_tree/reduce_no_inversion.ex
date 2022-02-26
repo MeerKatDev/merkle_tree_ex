@@ -20,10 +20,7 @@ defmodule MerkleTree.ReduceNoInversion do
         {{tx, nil}, hashes}
 
       tx, {{l, nil}, hashes} ->
-        {{l, tx}, hashes}
-
-      tx, {{l, r}, hashes} ->
-        {{tx, nil}, [sha256(l, r, inverted?) | hashes]}
+        {{nil, nil}, [sha256(l, tx, inverted?) | hashes]}
     end)
     |> then(fn
       {{nil, nil}, hashes} ->
@@ -31,9 +28,6 @@ defmodule MerkleTree.ReduceNoInversion do
 
       {{tx, nil}, hashes} ->
         [sha256(tx, tx, inverted?) | hashes]
-
-      {{l, r}, hashes} ->
-        [sha256(l, r, inverted?) | hashes]
     end)
     |> get_root(not inverted?)
   end

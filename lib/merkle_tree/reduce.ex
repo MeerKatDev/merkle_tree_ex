@@ -16,10 +16,7 @@ defmodule MerkleTree.Reduce do
         {{tx, nil}, hashes}
 
       tx, {{l, nil}, hashes} ->
-        {{l, tx}, hashes}
-
-      tx, {{l, r}, hashes} ->
-        {{tx, nil}, [sha256(l <> r) | hashes]}
+        {{nil, nil}, [sha256(l <> tx) | hashes]}
     end)
     # after
     |> then(fn
@@ -28,13 +25,6 @@ defmodule MerkleTree.Reduce do
 
       {{tx, nil}, hashes} ->
         [sha256(tx <> tx) | hashes]
-
-      {{l, r}, hashes} ->
-        [sha256(l <> r) | hashes]
-
-      x ->
-        IO.inspect(x)
-        raise "WTF"
     end)
     |> Enum.reverse()
     |> get_root()
