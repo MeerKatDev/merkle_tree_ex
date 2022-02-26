@@ -24,3 +24,5 @@ merkle_tree-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+samples/input-100k.txt
